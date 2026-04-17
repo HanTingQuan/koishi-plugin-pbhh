@@ -1,4 +1,5 @@
-import { Context, h, Schema } from 'koishi'
+import type { Context } from 'koishi'
+import { h, Schema } from 'koishi'
 
 export const name = 'pbhh'
 
@@ -6,8 +7,7 @@ export interface Config { }
 
 export const Config: Schema<Config> = Schema.object({})
 
-export function apply(ctx: Context, config: Config) {
-
+export function apply(ctx: Context) {
   ctx.command('pbhh', '屏被轰坏！')
     .alias('屏被轰坏', '㵗㶔𤃫𣸎')
     .action(async ({ session }) => {
