@@ -25,10 +25,4 @@ export function apply(ctx: Context) {
         subTitle: 'pbhh.net',
       }))
     })
-
-  ctx.command('tianzi <message:text>', '薨机的填字。')
-    .action((_, message) =>
-      message.includes('[[') && message.includes(']]')
-        ? ctx.http.get(`http://pbhh.net:8426/translate?text=${encodeURIComponent(message)}`)
-        : message)
 }
