@@ -3,7 +3,7 @@ import { h, Schema } from 'koishi'
 
 export const name = 'pbhh'
 
-export interface Config { }
+export interface Config {}
 
 export const Config: Schema<Config> = Schema.object({})
 
@@ -28,7 +28,7 @@ export function apply(ctx: Context) {
 
   ctx.command('tianzi <message:text>', '薨机的填字。')
     .action((_, message) =>
-    message.includes('[[') && message.includes(']]')
-     ? ctx.http.post('http://pbhh.net:8426/translate', message)
-     : message)
+      message.includes('[[') && message.includes(']]')
+        ? ctx.http.post('http://pbhh.net:8426/translate', message)
+        : message)
 }
